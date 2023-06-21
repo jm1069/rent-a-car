@@ -49,6 +49,26 @@
             "fueltype" : "petrol",
             "imglink" : "https://files.porsche.com/filestore/image/multimedia/none/992-gt3-modelimage-sideshot/model/765dfc51-51bc-11eb-80d1-005056bbdc38/porsche-model.png",
             "id" : "5"
+        },
+        {
+            "manufacture" : "Nissan",
+            "carname" : "Skyline GTR",
+            "horsepower" : "525ps",
+            "price" : "$950",
+            "transmission" : "automatic",
+            "fueltype" : "petrol",
+            "imglink" : "https://files.porsche.com/filestore/image/multimedia/none/992-gt3-modelimage-sideshot/model/765dfc51-51bc-11eb-80d1-005056bbdc38/porsche-model.png",
+            "id" : "5"
+        },
+        {
+            "manufacture" : "Porsche",
+            "carname" : "911 Carrera GTS",
+            "horsepower" : "525ps",
+            "price" : "$950",
+            "transmission" : "automatic",
+            "fueltype" : "petrol",
+            "imglink" : "https://files.porsche.com/filestore/image/multimedia/none/992-gt3-modelimage-sideshot/model/765dfc51-51bc-11eb-80d1-005056bbdc38/porsche-model.png",
+            "id" : "5"
         }
     ]
 }
