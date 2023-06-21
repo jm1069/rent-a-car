@@ -5,7 +5,7 @@ export default function CarCard(props){
   return (
     <Card shadow="sm" padding="sm" radius="md" withBorder>
       <Card.Section component="a">
-        <Image height={180}alt="No way!" src={props.imglink}/>
+        <Image fit="cover" height={180}alt="No way!" src={props.imglink}/>
       </Card.Section>
       <Group position="apart" mt="md" mb="xs">
         <Text >{props.manufacture}</Text>

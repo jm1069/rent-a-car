@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { SimpleGrid, Container, Select  } from '@mantine/core';
+import { SimpleGrid, Container, Select, Skeleton  } from '@mantine/core';
 import { BeatLoader } from 'react-spinners';
 import CarCard from './CarCard';
 
@@ -10,6 +10,13 @@ export default function CarShowcase(){
     const [isLoading, setLoading] = useState(true);
     const [isError , setError] = useState(false);
     const [manufacutres, setManufactures] = useState([])
+
+    const getManuFactures = (array) => {
+        const carArray = array.map((car) => car.manufacture);
+        // console.log(carArray);
+        const uniqueManufactures = [...new Set(carArray)];
+        setManufactures(uniqueManufactures);
+    }
 
     useEffect(() => {
         axios.get('http://localhost:3000/cars')
@@ -25,13 +32,6 @@ export default function CarShowcase(){
                 setError(true);
             });
     }, []);
-
-    const getManuFactures = (array) => {
-        const carArray = array.map((car) => car.manufacture);
-        console.log(carArray);
-        const uniqueManufactures = [...new Set(carArray)];
-        setManufactures(uniqueManufactures);
-    }
 
     if(isLoading){
         return(
