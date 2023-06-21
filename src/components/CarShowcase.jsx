@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
-import Sidebar from './UI/Sidebar'
+// import Sidebar from './UI/Sidebar'
+import { SimpleGrid } from '@mantine/core';
 import axios from 'axios';
 import { BeatLoader } from 'react-spinners';
 import CarCard from './CarCard';
@@ -57,7 +58,7 @@ export default function CarShowcase(){
     return (
         <>
         <h1>Car Showcase</h1>
-        <div className='flex'>
+        <div>
           <div>
             <select
               id="manufacturer"
@@ -72,7 +73,7 @@ export default function CarShowcase(){
             </select>
           </div>
     
-          <div className='flex'>
+          <SimpleGrid cols={5}>
             {filteredCars.map((car) => (
                 <CarCard
                     key={car.id}
@@ -85,7 +86,7 @@ export default function CarShowcase(){
                     imglink={car.imglink}
                 />
             ))}
-          </div>
+          </SimpleGrid>
         </div>
         </>
       );

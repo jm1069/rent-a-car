@@ -1,12 +1,17 @@
 import React from 'react'
+import { Card, Image, Text, Badge, Button, Group } from '@mantine/core';
 
 export default function CarCard(props){
   return (
-    <div className='p-10'>
-        <h1 className='text-xl'>{props.manufacture}</h1>
-        <h2>{props.carname}</h2>
-        <img className='object-cover w-96' src={props.imglink}></img>
-        <button className='px-10 py-3 rounded-md bg-buttonblue font-md text-white'>Rent Now</button>
-    </div>
+    <Card shadow="sm" padding="sm" radius="md" withBorder>
+      <Card.Section component="a">
+        <Image height={180}alt="No way!" src={props.imglink}/>
+      </Card.Section>
+      <Group position="apart" mt="md" mb="xs">
+        <Text >{props.manufacture}</Text>
+      </Group>
+      <h2>{props.carname}</h2>
+      <Button variant="light" color="blue" fullWidth mt="md" radius="md">Rent Now</Button>
+    </Card>
   )
 }
