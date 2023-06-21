@@ -9,16 +9,19 @@ export default function CarShowcase(){
     const [carData, setCarData] = useState([]);
     const [selectedManufacturer, setSelectedManufacturer] = useState('');
     const [isLoading, setLoading] = useState(true);
+    const [isError , setError] = useState(false);
 
     useEffect(() => {
         axios.get('http://localhost:3000/cars')
             .then((response) => {
                 setCarData(response.data);
                 setLoading(false);
+                setError(false);
             })
             .catch((error) => {
                 console.error('Fehler beim Abrufen der API');
-                setLoading(true);
+                setLoading(false);
+                setError(true);
             });
     }, []);
 
@@ -34,7 +37,15 @@ export default function CarShowcase(){
 
     if(isLoading){
         return(
-            <BeatLoader />
+            <div className='flex items-center justify-center h-screen'>
+                <BeatLoader />  
+            </div>
+        )
+    }
+
+    if(isError){
+        return(
+            <div>Fehler beim Laden</div>
         )
     }
 
